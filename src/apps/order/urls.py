@@ -1,5 +1,5 @@
 from django.urls import path, include
-from apps.profiles.views import index
+from apps.order.views import index
 
 urlpatterns = [
     path(r'^$', index),

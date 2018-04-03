@@ -28,6 +28,7 @@ class Item(models.Model):
     id_item = models.IntegerField(primary_key=True)
     id_pedido = models.ForeignKey(Pedido, blank=False, on_delete=models.CASCADE)
     sys_impr = ForeignKey(Impresora, null=False, blank=False, on_delete=models.CASCADE)
-    tipo_material = ForeignKey(Material, null=True, on_delete=models.CASCADE)
+    tipo_material = ForeignKey(Material, null=True, on_delete=models.CASCADE)   # Tipo de lienzo depende de la impresora
+    impresion = models.CharField(max_length=50) # Simple o Doble Faz (Puede ser nulo)
     cantidad = models.IntegerField()
     observacion = models.models.TextField()
