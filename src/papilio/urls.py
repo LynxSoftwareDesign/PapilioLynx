@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from papilio.views import inicio
 
 urlpatterns = [
     path(r'^admin/', admin.site.urls),
     path(r'^perfil/', include('apps.profiles.urls', namespace="perfil")),
     path(r'^pedidos/', include('apps.order.urls', namespace="pedidos")),
+    path(r'^$', inicio),
 ]
