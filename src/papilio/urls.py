@@ -15,11 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from papilio.views import inicio
+from papilio.views import inicio, clientes, contacto, nosotros, servicios
 
 urlpatterns = [
+    # Urls de Apps
     path('admin/', admin.site.urls),
     path('perfil/', include('apps.profiles.urls')),
     path('pedidos/', include('apps.order.urls')),
+
+    #Urls internas
     path('', inicio),
+    path('inicio', inicio),
+    path('clientes', clientes),
+    path('contacto', contacto),
+    path('nosotros', nosotros),
+    path('servicios', servicios),
 ]
