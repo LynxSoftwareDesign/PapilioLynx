@@ -17,21 +17,21 @@ class ItemForm(forms.ModelForm):
         ]
 
         labels = [
-            'id_item' : 'Item',
-            'id_pedido' : 'Pedido',
-            'sys_impr' : 'Sistema de impresion',
-            'tipo_material' : 'Tipo de Material',
-            'impresion' : 'Impresion',
-            'cantidad' : 'Cantidad',
-            'observacion' : 'observacion',
+            'id_item': 'Item',
+            'id_pedido': 'Pedido',
+            'sys_impr': 'Sistema de impresion',
+            'tipo_material': 'Tipo de Material',
+            'impresion': 'Impresion',
+            'cantidad': 'Cantidad',
+            'observacion': 'observacion',
         ]
 
         fields = [
-            'id_item' : forms.TextInputs(),
-            'id_pedido' : forms.TextInputs(),
-            'sys_impr' : forms.Select(),
-            'tipo_material' : forms.Select(),
-            'impresion' : forms.Select(),
-            'cantidad' : forms.TextInputs(),
-            'observacion' : forms.TextInputs(),
+            'id_item': forms.TextInputs(),
+            'id_pedido': forms.TextInputs(),
+            'sys_impr': forms.Select(),
+            'tipo_material': forms.Select(),
+            'impresion': forms.Select(),
+            'cantidad': forms.TextInputs(),
+            'observacion': forms.TextInputs(),
         ]
