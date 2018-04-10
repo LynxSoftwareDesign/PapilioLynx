@@ -20,14 +20,14 @@ from papilio.views import inicio, clientes, contacto, nosotros, servicios
 urlpatterns = [
     # Urls de Apps
     path('admin/', admin.site.urls),
-    path('perfil/', include('apps.profiles.urls')),
-    path('pedidos/', include('apps.order.urls')),
+    path('perfil/', include(('apps.profiles.urls', 'perfil'), namespace='perfil')),
+    path('pedidos/', include(('apps.order.urls', 'pedidos'), namespace='pedidos')),
 
     #Urls internas
-    path('', inicio),
+    path('', inicio, name = 'inicio'),
     path('inicio', inicio),
-    path('clientes', clientes),
-    path('contacto', contacto),
-    path('nosotros', nosotros),
-    path('servicios', servicios),
+    path('clientes', clientes, name = 'clientes'),
+    path('contacto', contacto, name = 'contacto'),
+    path('nosotros', nosotros, name = 'nosotros'),
+    path('servicios', servicios, name = 'servicios'),
 ]
