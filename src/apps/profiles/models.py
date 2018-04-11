@@ -7,5 +7,4 @@ class Profile(models.Model):
     direccion = models.TextField()
     telefono = models.CharField(max_length = 15)
     correo = models.EmailField()
-    id_cliente = models.IntegerField()
     fecha_nacimiento = models.DateField(null=True, blank=True)

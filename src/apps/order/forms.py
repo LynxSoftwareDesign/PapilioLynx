@@ -6,8 +6,7 @@ class ItemForm(forms.ModelForm):
         model = Item
 
         fields = [
-            'id_item',
-            'id_pedido',
+            'pedido',
             'sys_impr',
             'tipo_material',
             'impresion',
@@ -16,8 +15,7 @@ class ItemForm(forms.ModelForm):
         ]
 
         labels = {
-            'id_item' : 'idItem',
-            'id_pedido' : 'idPedido',
+            'pedido' : 'pedido',
             'sys_impr' : 'Sistema de Impresion',
             'tipo_material' : 'Tipo de Material',
             'impresion' : 'Impresion',
@@ -26,11 +24,10 @@ class ItemForm(forms.ModelForm):
         }
 
         widgets = {
-        'id_item' : forms.TextInput(),
-        'id_pedido' : forms.TextInput(),
-        'sys_impr' : forms.Select(),
-        'tipo_material' : forms.Select(),
-        'impresion' : forms.Select(),
-        'cantidad': forms.TextInput(),
-        'observacion' : forms.TextInput(),
+        'pedido' : forms.TextInput(attrs={'class':'form-control'}),
+        'sys_impr' : forms.Select(attrs={'class':'form-control'}),
+        'tipo_material' : forms.Select(attrs={'class':'form-control'}),
+        'impresion' : forms.Select(attrs={'class':'form-control'}),
+        'cantidad': forms.TextInput(attrs={'class':'form-control'}),
+        'observacion' : forms.TextInput(attrs={'class':'form-control'}),
         }

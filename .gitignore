@@ -190,5 +190,5 @@ venv.bak/
 .mypy_cache/
 
 .idea/
-apps/profiles/migrations/
-apps/order/migrations/
+src/apps/profiles/migrations/
+src/apps/order/migrations/
