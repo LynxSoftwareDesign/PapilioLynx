@@ -1,8 +1,7 @@
 from django import forms
-from apps.order.models import Pedido, Item, Estado, Material, Impresora
+from apps.order.models import  Item
 
 class ItemForm(forms.ModelForm):
-
     class Meta:
         model = Item
 
@@ -16,22 +15,22 @@ class ItemForm(forms.ModelForm):
             'observacion',
         ]
 
-        labels = [
-            'id_item': 'Item',
-            'id_pedido': 'Pedido',
-            'sys_impr': 'Sistema de impresion',
-            'tipo_material': 'Tipo de Material',
-            'impresion': 'Impresion',
-            'cantidad': 'Cantidad',
-            'observacion': 'observacion',
-        ]
+        labels = {
+            'id_item' : 'idItem',
+            'id_pedido' : 'idPedido',
+            'sys_impr' : 'Sistema de Impresion',
+            'tipo_material' : 'Tipo de Material',
+            'impresion' : 'Impresion',
+            'cantidad' : 'Cantidad',
+            'observacion' : 'Detalles',
+        }
 
-        fields = [
-            'id_item': forms.TextInputs(),
-            'id_pedido': forms.TextInputs(),
-            'sys_impr': forms.Select(),
-            'tipo_material': forms.Select(),
-            'impresion': forms.Select(),
-            'cantidad': forms.TextInputs(),
-            'observacion': forms.TextInputs(),
-        ]
+        widgets = {
+        'id_item' : forms.TextInput(),
+        'id_pedido' : forms.TextInput(),
+        'sys_impr' : forms.Select(),
+        'tipo_material' : forms.Select(),
+        'impresion' : forms.Select(),
+        'cantidad': forms.TextInput(),
+        'observacion' : forms.TextInput(),
+        }
