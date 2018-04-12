@@ -35,11 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
     'apps.profiles',
     'apps.order',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 ]
 
 SITE_ID = 1
