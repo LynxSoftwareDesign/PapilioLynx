@@ -15,9 +15,9 @@ class Pedido(models.Model):
     cliente = models.ForeignKey(User, null=False, blank=False, on_delete=models.CASCADE)
     estado = models.ForeignKey(Estado, null=False, blank=False, on_delete=models.CASCADE) #Clave foranea de Estados
     titulo = models.CharField(max_length=50)
-    fecha_pedido = models.DateTimeField(blank=True, null=True)
-    fecha_estimada_entrega = models.DateTimeField(blank=True, null=True)
-    fecha_entrega = models.DateTimeField(blank=True, null=True)
+    fecha_pedido = models.DateField(blank=True, null=True)
+    fecha_estimada_entrega = models.DateField(blank=True, null=True)
+    fecha_entrega = models.DateField(blank=True, null=True)
 
     def publish(self):
         self.fecha_pedido = timezone.now()

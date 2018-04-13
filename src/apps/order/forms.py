@@ -1,6 +1,7 @@
 from django import forms
-from apps.order.models import  Item
+from apps.order.models import  Item, Pedido
 
+# Creacion de Items
 class ItemForm(forms.ModelForm):
     class Meta:
         model = Item
@@ -31,3 +32,23 @@ class ItemForm(forms.ModelForm):
         'cantidad': forms.TextInput(attrs={'class':'form-control'}),
         'observacion' : forms.TextInput(attrs={'class':'form-control'}),
         }
+
+#Creacion de Pedidos
+class PedidoForm(forms.ModelForm):
+    class Meta:
+        model = Pedido
+
+        fields = [
+            'titulo',
+            'fecha_estimada_entrega',
+        ]
+
+        labels = {
+            'titulo' : 'titulo',
+            'fecha_estimada_entrega' : 'Fecha de Entrega',
+            }
+
+        widgets = {
+        'titulo' : forms.TextInput(attrs={'class':'form-control'}),
+        'fecha_estimada_entrega' : forms.DateField(widget=forms.widgets.DateInput(format="%m/%d/%Y")),
+                }
