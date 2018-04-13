@@ -30,7 +30,7 @@
       <div class="login-box-body">
         <p class="login-box-msg">Iniciar Sesion</p>
         <form method="post">
-          {% csrf_token %} 
+          {% csrf_token %}
           <div class="form-group has-feedback">
             <input type="text" class="form-control" placeholder="Usuario" name="username"/>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -53,7 +53,7 @@
         </form>
 
         <a href="#">Recuperar Contraseña</a><br>
-        <a href="register.html" class="text-center">Registrarse</a>
+        <a href="{% url 'registro' %}" class="text-center">Registrarse</a>
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->

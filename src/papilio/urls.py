@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from papilio.views import inicio, clientes, contacto, nosotros, servicios
+from apps.profiles.views import RegistroUsuario
+from django.contrib.auth.views import login, logout_then_login
 
 urlpatterns = [
     # Urls de Apps
@@ -30,4 +32,10 @@ urlpatterns = [
     path('contacto', contacto, name = 'contacto'),
     path('nosotros', nosotros, name = 'nosotros'),
     path('servicios', servicios, name = 'servicios'),
+
+    # Urls Gestion de Usuarios
+    path('accounts/login/',login, {'template_name':'board/forms/login.html'},name = 'login'),
+    path('accounts/register/', RegistroUsuario.as_view(), name = 'registro'),
+    path('accounts/logout/', logout_then_login, name = 'logout'),
+
 ]
