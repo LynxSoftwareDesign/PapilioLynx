@@ -9,6 +9,7 @@ from apps.profiles.forms import RegistroForm
 def index(request):
     return render(request, 'board/pages/inicio.html')
 
+# Registro de Usuarios
 class RegistroUsuario(CreateView):
     model = User
     template_name = "board/forms/registro.html"
