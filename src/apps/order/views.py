@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
 
 from apps.order.models import Item, Pedido
-from apps.order.forms import ItemForm
+from apps.order.forms import ItemForm, PedidoForm
 
 # Create your views here.
 def index(request):
@@ -19,7 +19,7 @@ def index(request):
 class ItemsForm(CreateView):
     model = Item
     form_class = ItemForm
-    template_name = 'board/forms/item.html'
+    template_name = 'board/forms/add_item.html'
     success_url = reverse_lazy('perfil:inicio')
 
 ############################
@@ -40,7 +40,7 @@ class ItemsList(ListView):
 ###########################
 class OrderForm(CreateView):
     model = Pedido
-    form_class = ItemForm
+    form_class = PedidoForm
     template_name = 'board/forms/item.html'
     success_url = reverse_lazy('perfil:inicio')
 
@@ -52,5 +52,5 @@ class OrderForm(CreateView):
 #
 ###########################
 class OrderList(ListView):
-    model = Item
-    template_name = 'board/forms/item.html'
+    model = Pedido
+    template_name = 'board/forms/pedidos.html'

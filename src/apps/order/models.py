@@ -7,9 +7,6 @@ class Estado(models.Model):
     nombre_estado = models.CharField(max_length=30)
     color_estado = models.CharField(max_length=30)
 
-    def __str__(self):
-        return '{}'.format(self.nombre_estado)
-
 # Se crea modelo de pedidos
 class Pedido(models.Model):
     cliente = models.ForeignKey(User, null=False, blank=False, on_delete=models.CASCADE)
