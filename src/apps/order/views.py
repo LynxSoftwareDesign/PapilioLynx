@@ -45,6 +45,7 @@ class OrderForm(CreateView):
     success_url = reverse_lazy('perfil:inicio')
 
 
+
 ############################
 #
 # Enlista los items de la Base de Datos
@@ -54,3 +55,4 @@ class OrderForm(CreateView):
 class OrderList(ListView):
     model = Pedido
     template_name = 'board/forms/pedidos.html'
+    paginate_by= 10

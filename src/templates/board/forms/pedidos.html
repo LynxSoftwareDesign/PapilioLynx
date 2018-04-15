@@ -18,8 +18,14 @@
           <div class="box-header">
             <h3 class="box-title">Pedidos Realizados</h3>
             <div class="box-tools">
-              <div class="input-group">
-              </div>
+              <ul class="pagination pagination-sm no-margin pull-right">
+                {% if page_obj.has_previus %}
+                <li><a href="?page={{ page_obj.previus_page_number }}">&laquo;</a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.previus_page_number }}">&raquo;</a></li>
+                {% endif %}
+              </ul>
             </div>
           </div><!-- /.box-header -->
           <div class="box-body table-responsive no-padding">
