@@ -48,6 +48,7 @@ class Item(models.Model):
     cantidad = models.IntegerField()
     nombre_item = models.CharField(max_length=50)
     observacion = models.TextField()
+    archivo = models.FileField(upload_to='files/', null=True, blank=True)
 
     #Retorna el nombre
     def __str__(self):
