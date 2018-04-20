@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, CreateView
-
+from django.contrib.auth.models import User
 from apps.order.models import Item, Pedido
 from apps.order.forms import ItemForm, PedidoForm
 
@@ -56,3 +57,6 @@ class OrderList(ListView):
     model = Pedido
     template_name = 'board/forms/pedidos.html'
     paginate_by= 10
+
+    def get_queryset(self):
+        return(Pedido.objects.filter(cliente=self.request.user))
