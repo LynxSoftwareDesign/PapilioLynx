@@ -32,7 +32,7 @@ class ItemsList(ListView):
 class OrderForm(CreateView):
     model = Pedido
     form_class = PedidoForm
-    template_name = 'board/forms/item.html'
+    template_name = 'board/forms/add_pedido.html'
     success_url = reverse_lazy('perfil:inicio')
 
 

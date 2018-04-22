@@ -1,0 +1,54 @@
+{% extends 'board/frame.html' %}
+
+{% block content %}
+
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Pedidos
+      <small>Agregar un pedido</small>
+    </h1>
+  </section>
+
+  <section class="content">
+    <div class="row">
+      <div class="col-lg-12 col-xs-24">
+        <div class="box box-primary">
+
+          <div class="box-header">
+            <h3 class="box-title">Pedido</h3>
+          </div>
+
+          <form role="form" method="post">
+            {% csrf_token %}
+
+            <div class="box-body">
+              <div class="col-lg-6 col-xs-12">
+                <br><br>
+                <div class="form-group">
+                  <label>Titulo</label>
+                  {{ form.titulo }}
+                </div>
+              </diV>
+              <div class="col-lg-6 col-xs-12">
+                <br><br>
+                <div class="form-group">
+                  <label>Fecha de Entrega</label>
+                  {{ form.fecha_estimada_entrega }}
+                </div>
+              </div>&nbsp;
+            </div>
+
+            <div class="box-footer">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Siguiente</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}

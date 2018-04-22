@@ -7,6 +7,7 @@ from apps.order.views import index, ItemsForm, OrderForm, OrderList
 
 urlpatterns = [
     path('', index, name = 'inicio'),
-    path('item', login_required(ItemsForm.as_view()), name = 'add_item'),
+    path('add_item', login_required(ItemsForm.as_view()), name = 'add_item'),
     path('pedidos', login_required(OrderList.as_view()), name = 'pedidos'),
+    path('add_pedido', login_required(OrderForm.as_view()), name = 'add_pedido'),
 ]
