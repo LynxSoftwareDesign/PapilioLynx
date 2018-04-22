@@ -1,5 +1,5 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
 
 # Perfil, Modelado de perfil en base de datos.
 class Profile(models.Model):

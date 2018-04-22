@@ -1,11 +1,14 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
-from django.urls import reverse_lazy
+# Import Django
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView, CreateView
 from django.contrib.auth.models import User
-from apps.order.models import Item, Pedido
+from django.http import HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView
+
+# Import interno
 from apps.order.forms import ItemForm, PedidoForm
+from apps.order.models import Item, Pedido
 
 # Crea una vista en index
 def index(request):
@@ -36,7 +39,7 @@ class OrderForm(CreateView):
 # Enlista los items de la Base de Datos
 class OrderList(ListView):
     model = Pedido
-    template_name = 'board/forms/pedidos.html'
+    template_name = 'board/pages/pedidos.html'
     paginate_by= 10
 
     # Toma en cuenta el usuario logueado

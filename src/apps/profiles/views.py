@@ -9,12 +9,8 @@ from django.views.generic import ListView, CreateView
 from apps.profiles.forms import RegistroForm
 from apps.profiles.models import Profile
 
-# Create your views here.
-def index(request):
-    return render(request, 'board/pages/inicio.html')
-
 # Se crea l vista de Inicio
-class Inicio(ListView):
+class Index(ListView):
     model = Profile
     template_name = 'board/pages/inicio.html'
 

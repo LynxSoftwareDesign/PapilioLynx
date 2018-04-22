@@ -1,5 +1,8 @@
-from django.urls import path, include
+# Import Django
 from django.contrib.auth.decorators import login_required
+from django.urls import path, include
+
+# Import Interno
 from apps.order.views import index, ItemsForm, OrderForm, OrderList
 
 urlpatterns = [
