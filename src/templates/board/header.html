@@ -1,6 +1,6 @@
 <header class="main-header">
   <!-- Logo -->
-  <a href="" class="logo">Area <b>Cliente</b><br></a>
+  <a href="{% url 'perfil:inicio' %}" class="logo">Area <b>Cliente</b><br></a>
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top" role="navigation">
 
@@ -21,19 +21,17 @@
           <!--   <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
              --><p>
                 {{ user.first_name }} {{ user.last_name }}({{ user.username }})
-               <small>Member since Nov. 2012</small>
+               <small>GrafittiColor</small>
              </p>
            </li>
            <!-- Menu Body -->
            <li class="user-body">
-             <div class="col-xs-4 text-center">
-               <a href="#">Followers</a>
+             <div class="col-xs-3 text-center">
              </div>
-             <div class="col-xs-4 text-center">
-               <a href="#">Sales</a>
+             <div class="col-xs-6 text-center">
+               <a href="#">Editar Perfil</a>
              </div>
-             <div class="col-xs-4 text-center">
-               <a href="#">Friends</a>
+             <div class="col-xs-3 text-center">
              </div>
            </li>
            <!-- Menu Footer-->
@@ -57,21 +55,14 @@
   <section class="sidebar">
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
-      <li class="header">Perfil</li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-dashboard"></i> <span>Mi informacion</span></i>
-        </a>
-      </li>
-      <li class="treeview">
-        <a href="editar">
-          <i class="fa fa-files-o"></i>
-          <span>Editar Perfil</span>
-        </a>
-      </li>
       <li class="header">Pedidos</li>
-      <li><a href="#"><i class="fa fa-circle-o text-danger"></i> Mis Pedidos</a></li>
-      <li><a href="#"><i class="fa fa-circle-o text-warning"></i> Nuevo Pedido</a></li>
+      <li><a href="{% url 'pedidos:pedidos' %}"><i class="fa fa-files-o text-warning"></i> Mis Pedidos</a></li>
+      <li><a href="#"><i class="fa fa-files-o text-warning"></i> Pedidos Activos</a></li>
+      <li><a href="#"><i class="fa fa-files-o text-warning"></i> Pedidos En Planta</a></li>
+      <li><a href="#"><i class="fa fa-files-o text-warning"></i> Pedidos Rechazados</a></li>
+      <li><a href="#"><i class="fa fa-files-o text-warning"></i> Pedidos Finalizados</a></li>
+      <br>
+      <li><a href="#"><i class="fa fa-plus-o text-danger  "></i> Nuevo Pedido</a></li>
     </ul>
   </section>
   <!-- /.sidebar -->
