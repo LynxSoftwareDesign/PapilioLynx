@@ -4,7 +4,7 @@ from django.db import models
 # Se modela Tipos de Cuentas
 class TipoCuenta(models.Model):
     nombreTipo = models.CharField(max_length = 25)
-    #adm_menu = models.boolean()
+    adm_menu = models.BooleanField()
 
 # Modelado de perfil.
 class Profile(models.Model):
